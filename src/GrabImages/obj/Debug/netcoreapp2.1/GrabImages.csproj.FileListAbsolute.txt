@@ -1,0 +1,11 @@
+C:\code\GrabImages\GrabImages\bin\Debug\netcoreapp2.1\GrabImages.deps.json
+C:\code\GrabImages\GrabImages\bin\Debug\netcoreapp2.1\GrabImages.runtimeconfig.json
+C:\code\GrabImages\GrabImages\bin\Debug\netcoreapp2.1\GrabImages.runtimeconfig.dev.json
+C:\code\GrabImages\GrabImages\bin\Debug\netcoreapp2.1\GrabImages.dll
+C:\code\GrabImages\GrabImages\bin\Debug\netcoreapp2.1\GrabImages.pdb
+C:\code\GrabImages\GrabImages\obj\Debug\netcoreapp2.1\GrabImages.csprojAssemblyReference.cache
+C:\code\GrabImages\GrabImages\obj\Debug\netcoreapp2.1\GrabImages.csproj.CoreCompileInputs.cache
+C:\code\GrabImages\GrabImages\obj\Debug\netcoreapp2.1\GrabImages.AssemblyInfoInputs.cache
+C:\code\GrabImages\GrabImages\obj\Debug\netcoreapp2.1\GrabImages.AssemblyInfo.cs
+C:\code\GrabImages\GrabImages\obj\Debug\netcoreapp2.1\GrabImages.dll
+C:\code\GrabImages\GrabImages\obj\Debug\netcoreapp2.1\GrabImages.pdb

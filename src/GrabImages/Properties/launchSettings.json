@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GrabImages": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Code\\Images C:\\code\\usernames.txt"
+    }
+  }
+}
