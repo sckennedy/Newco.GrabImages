@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 
@@ -9,6 +10,7 @@ namespace GrabImages
         private const string baseUrl = "http://wwwin.cisco.com/dir/photo/zoom/";
         private static string imagesFolder = @"C:\Code\Images";
         private static string usernamesFile = @"C:\code\usernames.txt";
+        private static List<string> notFound = new List<string>();
         
         static void Main(string [] args)
         {
@@ -37,13 +39,26 @@ namespace GrabImages
 
             foreach (string username in usernames)
             {
-                Console.WriteLine($"Retrieving image for {username}");
                 DownloadImage(username);
             }
 
             Console.WriteLine($"Images downloaded to {imagesFolder}");
+            if (notFound.Count > 0)
+            {
+                var fileName = WriteOutputToFile(notFound, "Images_Not_Found");
+                Console.WriteLine($"Images not found  file created {fileName}");
+            }
+            
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
+        }
+
+        private static string WriteOutputToFile(List<string> lines, string name)
+        {
+            //create filename based on timestamp of the day
+            var fileName = $@"{imagesFolder}\{name}_{DateTime.Now.ToShortDateString().Replace("/", "_")}-{DateTime.Now.ToShortTimeString().Replace(":", "-")}.txt";
+            File.WriteAllLines(fileName, lines.ToArray());
+            return fileName;
         }
 
         private static void DownloadImage(string username)
@@ -54,10 +69,11 @@ namespace GrabImages
                 WebClient myWebClient = new WebClient();
                 myStringWebResource = baseUrl + fileName;
                 myWebClient.DownloadFile(myStringWebResource, $"{imagesFolder}/{fileName}");
-                Console.WriteLine("Done");
+                Console.WriteLine($"{username} done");
             }
             catch(Exception e)
             {
+                notFound.Add(username);
                 Console.WriteLine($"Error getting {username} image.  Exception: {e.Message}.  {e.StackTrace}");
             }
         }
