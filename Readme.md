@@ -1,4 +1,4 @@
-﻿## NewCo.GrabImages
+﻿# NewCo.GrabImages
 
 This is a dotnet core application and to run it, you will need the dotnet core runtime or SDK installed on the machine where it is running.  
 
